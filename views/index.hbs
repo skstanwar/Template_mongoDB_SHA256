@@ -2,10 +2,29 @@
 <html>
  <head>
     <title>Budget Managment</title>
- </head>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>    
+</head>
 <body>
-    <p>Hello Mr. {{profile.username}} !</p>
-    {{!-- <nav class=""></nav> --}}
+    <nav>{{#if profile.username}}
+<h1>Hello {{profile.username}} This Is Your DashBoard !</h1>
+{{else}}
+<h1>Your Are Unknown User !</h1>
+{{/if}}
+<button id="logout" onclick="LogOut()">Logout</button>
+</nav>
+<div class="container">
+<div class="div_1">
+    
+    <input type="text">
+   
+</div>
+<div class="div_2">this is div 2</div>
+</div>
 </body>
+<footer>
+  <h4>Author: Sanjay Kumar Saini &nbsp;</h4>
+  <h4><a href="mailto:hege@example.com">hege@example.com</a></h4>
+</footer>
  
 </html>

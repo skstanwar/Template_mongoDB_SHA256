@@ -9,7 +9,7 @@ import crypto from 'crypto';
 import hbs from 'hbs';
 import  Routes  from './routes/Routes.js';
 import {IsAuth} from './middlewares/middleware.js';
-
+// import {profile} from  './controllers/UserDataFetch.js';
 const app = express();
 
 dotenv.config();
@@ -35,11 +35,14 @@ app.use(cookieSession({
 }));
 app.use(cookieParser());
 
-app.get('/',(req, res) => {
+app.get('/',IsAuth, (req, res) => {
     const profile={
         username:req.session.username
     }
     res.render('index',{profile:profile} );
+});
+app.get('/Setprofile',IsAuth, (req, res) => {
+    res.sendFile(join(publicDirectoryPath, 'Setprofile.html'));
 });
 app.get('/login', (req, res) => {
     res.sendFile(join(publicDirectoryPath, 'login.html'));

@@ -1,0 +1,72 @@
+*{
+    
+    margin: 0;
+    /* overflow-x: hidden; */
+}
+body{
+    background-color: aqua;
+
+}
+@keyframes example {
+    0%   {background-color: rgb(7, 4, 4);}
+    25%  {background-color: rgb(29, 29, 18);}
+    50%  {background-color: rgb(42, 42, 68);}
+    100% {background-color: rgb(29, 51, 29);}
+  }
+nav{
+    animation: example 5s linear 2s infinite alternate;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 5vh;
+    background-color: #000000;
+    color: rgb(78, 219, 160);
+    font-family: 'Poppins', sans-serif;
+}
+nav h1{
+    background-color: #000000;
+    color: rgb(78, 219, 160);
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgb(123, 255, 0);
+}
+nav button{
+    position: absolute;
+    right: 1vw;
+    background-color: #000000;
+    color: rgb(78, 219, 160);
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgb(78, 219, 160);
+   
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+    background-color: #332828;
+    color: rgb(78, 219, 160);
+    font-family: 'Poppins', sans-serif;
+    /* position: relative; */
+
+}
+.container .div_1{
+    background-color: #e4bcbc;
+    
+}
+
+footer{
+    /* background-color: aqua; */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    /* width: 100%; */
+    padding-left: 2vw;
+    padding-top: 1vw;
+    float: left;
+    height: 5vh;
+    position: relative;
+    bottom: 0;
+}

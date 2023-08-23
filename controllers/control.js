@@ -5,7 +5,8 @@ import {DB_manager} from "../models/UserModel.js";
 
 const login = async(req, res) => {
     const { username, password } = req.body;
-    // console.log(username, password);
+    req.session.Relation_id=password;
+        // console.log(username, password);
     const response= await DB_manager.findOne({username:username,password:password});
     // console.log(response);
     if(response){
@@ -47,5 +48,11 @@ const register = async(req, res) => {
 
 
 }
+const logout = async(req, res) => {
+    req.session.username=null;
+    req.session.IsAuth=false;
+    console.log("page is locked!");
+    res.send({message:true});
+}
 
-export { login , register };
+export { login , register , logout };
