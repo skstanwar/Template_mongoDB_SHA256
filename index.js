@@ -8,6 +8,7 @@ import connectDB from './config/db.js';
 import crypto from 'crypto';
 import hbs from 'hbs';
 import  Routes  from './routes/Routes.js';
+import  Routes_2  from './routes/Routes_2.js';
 import {IsAuth} from './middlewares/middleware.js';
 // import {profile} from  './controllers/UserDataFetch.js';
 const app = express();
@@ -39,8 +40,15 @@ app.get('/',IsAuth, (req, res) => {
     const profile={
         username:req.session.username
     }
-    res.render('index',{profile:profile} );
+    res.render('index' ,{profile:profile});
 });
+// app.get('/profile',IsAuth, (req, res) => {
+//     const profile={
+//         username:req.session.username
+//     }
+   
+//     res.render('profile', {profile:profile});
+// });
 app.get('/Setprofile',IsAuth, (req, res) => {
     res.sendFile(join(publicDirectoryPath, 'Setprofile.html'));
 });
@@ -50,6 +58,7 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
     res.sendFile(join(publicDirectoryPath, 'register.html'));
 });
+app.use('/', Routes_2);
 app.use('/api', Routes);
 
 app.listen(3000, () => {
